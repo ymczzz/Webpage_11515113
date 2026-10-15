@@ -103,19 +103,22 @@
     .scroll-cue { position: absolute; bottom: 35px; left: 0; display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,.63); font-size: 10px; font-weight: 600; letter-spacing: .18em; }
     .scroll-cue::before { width: 38px; height: 1px; background: var(--sky); content: ""; }
 
-    .hero-art { position: relative; align-self: stretch; min-height: 470px; overflow: hidden; }
-    .hero-art .sun { position: absolute; top: 52px; right: 54px; width: clamp(138px, 18vw, 200px); aspect-ratio: 1; border-radius: 50%; background: #b9e8f5; box-shadow: 0 0 0 27px rgba(117,198,232,.09), 0 0 0 59px rgba(117,198,232,.045); }
-    .mountain { position: absolute; right: -11%; bottom: 6px; width: 116%; height: 260px; transform: skewY(-9deg); transform-origin: right bottom; background: linear-gradient(146deg, transparent 0 27%, rgba(61,145,184,.36) 27.3% 48%, rgba(17,97,143,.77) 48.3%); clip-path: polygon(0 62%, 28% 20%, 44% 57%, 68% 4%, 100% 57%, 100% 100%, 0 100%); }
-    .mountain--back { right: 13%; bottom: 98px; width: 108%; height: 220px; opacity: .46; transform: skewY(-4deg); background: #2a81ae; clip-path: polygon(0 84%, 31% 30%, 45% 62%, 66% 9%, 100% 66%, 100% 100%, 0 100%); }
-    .horizon { position: absolute; right: -4%; bottom: 0; width: 116%; height: 112px; background: linear-gradient(90deg, rgba(7,45,75,.5), #0d5684); transform: skewY(-4deg); }
-    .coffee-vessel { position: absolute; z-index: 4; right: 18%; bottom: 36px; width: 192px; height: 274px; filter: drop-shadow(18px 22px 14px rgba(0,0,0,.22)); }
-    .vessel-neck { position: absolute; top: 0; left: 62px; width: 68px; height: 42px; border: 7px solid #b3e2ef; border-bottom: 0; border-radius: 50% 50% 0 0; background: rgba(6,39,66,.62); }
-    .vessel-body { position: absolute; top: 33px; left: 18px; width: 150px; height: 212px; border: 7px solid #b3e2ef; border-radius: 31% 31% 42% 42% / 12% 12% 37% 37%; background: linear-gradient(90deg, rgba(30,112,151,.9), rgba(5,35,60,.9) 45%, rgba(83,167,198,.8)); overflow: hidden; }
-    .vessel-body::before { position: absolute; top: 15px; left: 0; width: 100%; height: 5px; background: rgba(197,237,244,.8); box-shadow: 0 48px rgba(197,237,244,.25), 0 95px rgba(197,237,244,.18), 0 145px rgba(197,237,244,.13); content: ""; }
-    .vessel-body::after { position: absolute; top: 5px; left: 48%; width: 24px; height: 200px; border-radius: 50%; background: rgba(218,247,251,.17); content: ""; }
-    .vessel-handle { position: absolute; right: 0; bottom: 49px; width: 62px; height: 98px; border: 10px solid #a9dce9; border-left: 0; border-radius: 0 53px 53px 0; }
-    .art-label { position: absolute; z-index: 5; right: 0; bottom: 64px; display: grid; gap: 3px; color: rgba(255,255,255,.73); font-size: 11px; letter-spacing: .1em; text-align: right; }
-    .art-label strong { color: var(--sky); font: 700 22px/1 "Playfair Display", serif; }
+    .hero-art { position: relative; align-self: stretch; min-height: 470px; overflow: visible; display: flex; align-items: center; justify-content: center; }
+    .hero-photo {
+      width: 400px;
+      height: 300px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      box-shadow: 24px 24px 0 rgba(117, 198, 232, 0.1), var(--shadow);
+      border: 7px solid rgba(255,255,255,.12);
+      background: #dfeef4;
+    }
+    .hero-photo-wrap {
+      position: relative;
+      display: inline-block;
+      max-width: 100%;
+    }
 
     /* Story */
     .story { padding: 118px 0; background: #fff; }
@@ -303,13 +306,10 @@
           <p class="hero-note">TAIPEI · TAIWAN · EST. 2025</p>
           <span class="scroll-cue">SCROLL TO DISCOVER</span>
         </div>
-        <div class="hero-art" aria-hidden="true">
-          <div class="sun"></div>
-          <div class="mountain mountain--back"></div>
-          <div class="mountain"></div>
-          <div class="horizon"></div>
-          <div class="coffee-vessel"><div class="vessel-neck"></div><div class="vessel-body"></div><div class="vessel-handle"></div></div>
-          <div class="art-label"><strong>92°C</strong><span>理想水溫</span><span>細細喚醒香氣</span></div>
+        <div class="hero-art" aria-label="咖啡與藍天美景照片">
+          <div class="hero-photo-wrap">
+            <img class="hero-photo" src="images/hero.jpg" alt="窗邊咖啡桌與藍天風景" width="400" height="300">
+          </div>
         </div>
       </div>
     </section>
