@@ -188,7 +188,7 @@
       background: transparent;
       box-shadow: none;
     }
-    .hero-photo { width: 400px; height: 300px; object-fit: cover; box-shadow: 24px 24px 0 rgba(117,198,232,.13), var(--shadow); }
+    .hero-photo { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; box-shadow: 24px 24px 0 rgba(117,198,232,.13), var(--shadow); }
     .window-frame { position: absolute; inset: 0; border: 12px solid #e8d4ae; box-shadow: inset 0 0 0 2px rgba(6,39,66,.18); }
     .window-frame::before, .window-frame::after { position: absolute; background: rgba(6,39,66,.25); content: ""; }
     .window-frame::before { top: 0; bottom: 0; left: 49%; width: 4px; }
@@ -354,7 +354,7 @@
       .hero-content { max-width: 640px; }
       .scroll-note { margin-top: 29px; }
       .hero-art { width: min(100%, 330px); height: 248px; min-height: 0; max-height: none; margin: 0; }
-      .hero-photo { width: 330px; height: 248px; }
+      .hero-photo { width: 100%; height: auto; }
       .coffee-grid { grid-template-columns: repeat(2, 1fr); }
       .coffee-card:nth-child(3) { grid-column: span 2; }
       .story-grid, .brew-grid { grid-template-columns: 1fr; }
@@ -375,18 +375,17 @@
       .hero-actions { margin-top: 23px; }
       .hero-actions .button { flex: 1; padding-inline: 13px; }
       .hero-meta { margin-top: 18px; }
-      .hero-art { width: 260px; height: 195px; min-height: 0; max-height: none; }
-      .hero-photo { width: 260px; height: 195px; }
+      .hero-art { width: min(260px, 100%); height: auto; min-height: 0; max-height: none; aspect-ratio: 4 / 3; }
       .art-label { display: none; }
       .sun { width: 49px; height: 49px; }
       .coffee-vessel { bottom: 9%; left: 25%; transform: scale(.72); transform-origin: bottom left; }
       .chair { transform: scale(.72); transform-origin: bottom right; }
       .story, .coffee, .brew, .visit { padding: 76px 0; }
-      .story-seal { width: 245px; height: 245px; }
+      .story-seal { width: min(245px, 100%); height: auto; aspect-ratio: 1; }
       .story-seal::before { margin-bottom: 8px; font-size: 54px; }
       .story-seal strong { font-size: 15px; }
       .story-visual { min-height: 315px; }
-      .note-card { width: 185px; padding: 18px; }
+      .note-card { width: min(185px, 78%); padding: 18px; }
       .note-card p:last-child { font-size: 14px; }
       .coffee-heading { display: block; margin-bottom: 30px; }
       .coffee-heading .section-copy { margin-top: 14px; }
@@ -442,7 +441,7 @@
         </div>
 
         <div class="hero-art" aria-hidden="true">
-          <img class="hero-photo" src="images/hero.jpg" width="400" height="300" alt="">
+          <img class="hero-photo" src="images/hero.jfif" width="400" height="300" alt="">
           <span class="art-label"><strong>92°C</strong><span>理想水溫</span><small>細細喚醒香氣</small></span>
         </div>
       </div>
