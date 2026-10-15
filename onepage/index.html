@@ -103,10 +103,12 @@
     .scroll-cue { position: absolute; bottom: 35px; left: 0; display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,.63); font-size: 10px; font-weight: 600; letter-spacing: .18em; }
     .scroll-cue::before { width: 38px; height: 1px; background: var(--sky); content: ""; }
 
-    .hero-art { position: relative; align-self: stretch; min-height: 470px; overflow: visible; display: flex; align-items: center; justify-content: center; }
+    .hero-art { position: relative; align-self: stretch; min-width: 0; min-height: 470px; overflow: visible; display: flex; align-items: center; justify-content: center; }
     .hero-photo {
-      width: 400px;
-      height: 300px;
+      width: 100%;
+      max-width: 400px;
+      aspect-ratio: 4 / 3;
+      height: auto;
       object-fit: cover;
       object-position: center;
       display: block;
@@ -117,6 +119,7 @@
     .hero-photo-wrap {
       position: relative;
       display: inline-block;
+      width: min(400px, 100%);
       max-width: 100%;
     }
 
@@ -124,7 +127,7 @@
     .story { padding: 118px 0; background: #fff; }
     .story-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(45px, 8vw, 105px); align-items: center; }
     .story-visual { position: relative; min-height: 416px; }
-    .seal { position: absolute; top: 0; left: 0; width: 310px; height: 310px; display: grid; place-items: center; border: 1px solid #a8d2df; border-radius: 50%; color: var(--blue); background: radial-gradient(circle at 35% 30%, #fff 0, #eaf6f8 68%, #d9edf1 100%); }
+    .seal { position: absolute; top: 0; left: 0; width: min(310px, 100%); aspect-ratio: 1; display: grid; place-items: center; border: 1px solid #a8d2df; border-radius: 50%; color: var(--blue); background: radial-gradient(circle at 35% 30%, #fff 0, #eaf6f8 68%, #d9edf1 100%); }
     .seal::before, .seal::after { position: absolute; border: 1px solid rgba(12,91,149,.25); border-radius: 50%; content: ""; }
     .seal::before { inset: 17px; }
     .seal::after { inset: 44px; border-style: dashed; }
@@ -246,7 +249,7 @@
       .hero-art .sun { width: 92px; }
       .coffee-vessel { right: 5%; bottom: -48px; transform: scale(.57); }
       .story, .coffee, .brew { padding: 76px 0; }
-      .seal { width: 245px; height: 245px; }
+      .seal { width: min(245px, 100%); }
       .seal-inner b { font-size: 35px; }
       .story-visual { min-height: 347px; }
       .blue-note { width: 185px; padding: 20px; }
@@ -308,7 +311,7 @@
         </div>
         <div class="hero-art" aria-label="咖啡與藍天美景照片">
           <div class="hero-photo-wrap">
-            <img class="hero-photo" src="images/hero.jpg" alt="窗邊咖啡桌與藍天風景" width="400" height="300">
+            <img class="hero-photo" src="images/hero.jfif" alt="窗邊咖啡桌與藍天風景" width="400" height="300">
           </div>
         </div>
       </div>
