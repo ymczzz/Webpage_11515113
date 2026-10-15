@@ -3,440 +3,641 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="藍天咖啡，為手沖咖啡愛好者挑選當季精品咖啡豆，讓每一杯都清澈、明亮、值得細品。">
-  <title>藍天咖啡｜讓風味，慢慢抵達</title>
+  <meta name="description" content="花點時間，精選各式各樣好看花束。在忙碌日常中，為自己與所愛之人花點時間，傳遞最溫柔的心意。">
+  <meta name="theme-color" content="#fffafb">
+  <title>花點時間｜精緻花藝・銷售各式美麗花束</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --navy: #062742;
-      --blue: #0c5b95;
-      --sky: #75c6e8;
-      --mist: #eaf5f7;
-      --cream: #fbfaf6;
-      --ink: #122534;
-      --muted: #607482;
-      --line: #d7e4e8;
-      --sand: #e5b66b;
-      --shadow: 0 18px 50px rgba(6, 39, 66, .13);
+      --pink: #e9657d;
+      --pink-deep: #cf4e68;
+      --pink-soft: #fdf2f4;
+      --rose: #f6dce2;
+      --blush: #fff7f8;
+      --berry: #3b1e25;
+      --ink: #30282a;
+      --muted: #74676a;
+      --line: #ead8dc;
+      --gold: #c99b61;
+      --white: #fff;
+      --cream: #fffafb;
+      --shadow: 0 18px 48px rgba(59, 30, 37, .12);
     }
-
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--cream);
-      font: 16px/1.7 "Noto Sans TC", sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
+    html { scroll-behavior: smooth; scroll-padding-top: 95px; }
+    body { margin: 0; color: var(--ink); background: var(--cream); font: 16px/1.7 "Noto Sans TC", sans-serif; -webkit-font-smoothing: antialiased; }
+    body.cart-open { overflow: hidden; }
+    img { display: block; width: 100%; }
     a { color: inherit; text-decoration: none; }
-    button, input { font: inherit; }
+    button, input, textarea { font: inherit; }
     button { cursor: pointer; }
-    .wrap { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
-    .eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin: 0 0 18px;
-      color: var(--blue);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .18em;
-    }
-    .eyebrow::before { width: 28px; height: 1px; background: currentColor; content: ""; }
-    .section-title {
-      margin: 0;
-      font: 800 clamp(30px, 4vw, 46px)/1.28 "Noto Serif TC", serif;
-      letter-spacing: .045em;
-    }
-    .text-blue { color: var(--blue); }
-    .button, .outline-link {
-      display: inline-flex;
-      min-height: 50px;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 23px;
-      border: 1px solid transparent;
-      border-radius: 2px;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: .04em;
-      transition: transform .25s ease, background-color .25s ease, color .25s ease, border-color .25s ease;
-    }
-    .button:hover, .outline-link:hover { transform: translateY(-2px); }
-    .button--sand { color: var(--navy); background: var(--sand); }
-    .button--sand:hover { background: #f1cb8b; }
-    .button--dark { color: var(--navy); background: #fff; }
-    .outline-link { border-color: rgba(255,255,255,.72); color: #fff; }
-    .outline-link:hover { color: var(--navy); background: #fff; }
-    :focus-visible { outline: 3px solid var(--sky); outline-offset: 4px; }
+    :focus-visible { outline: 3px solid #a8445a; outline-offset: 4px; }
+    .wrap { width: min(1200px, calc(100% - 48px)); margin-inline: auto; }
+    .announcement { min-height: 35px; display: grid; place-items: center; padding: 5px 18px; color: #fff; background: linear-gradient(90deg, #df5c75, #f0879b, #df5c75); font-size: 12px; letter-spacing: .04em; text-align: center; }
+    .site-header { position: sticky; z-index: 20; top: 0; border-bottom: 1px solid rgba(234,216,220,.78); background: rgba(255,255,255,.94); backdrop-filter: blur(12px); }
+    .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 11px; }
+    .brand-mark { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 50%; color: var(--pink-deep); background: var(--pink-soft); font-size: 20px; }
+    .brand-copy { display: grid; line-height: 1.1; }
+    .brand-copy strong { font: 700 22px/1.2 "Noto Serif TC", serif; letter-spacing: .04em; }
+    .brand-copy small { margin-top: 4px; color: var(--muted); font: 600 8px/1.2 "Playfair Display", serif; letter-spacing: .17em; }
+    .nav-menu { display: flex; align-items: center; gap: clamp(13px, 2vw, 27px); }
+    .nav-menu a { color: #514347; font-size: 13px; font-weight: 600; white-space: nowrap; transition: color .2s; }
+    .nav-menu a:hover { color: var(--pink-deep); }
+    .nav-menu .nav-cta { padding: 9px 15px; color: #fff; background: var(--pink); }
+    .nav-tools { display: flex; align-items: center; gap: 10px; }
+    .icon-button { position: relative; width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid var(--rose); border-radius: 50%; color: var(--berry); background: var(--pink-soft); font-size: 18px; }
+    .cart-count { position: absolute; top: -4px; right: -4px; min-width: 19px; height: 19px; display: grid; place-items: center; padding: 0 4px; border: 2px solid #fff; border-radius: 50%; color: #fff; background: var(--pink-deep); font-size: 10px; font-weight: 700; }
+    .mobile-toggle { display: none; width: 42px; height: 42px; border: 1px solid var(--rose); border-radius: 50%; color: var(--berry); background: #fff; font-size: 20px; }
 
-    /* Header & hero */
-    .site-header { position: absolute; z-index: 20; top: 0; left: 0; width: 100%; border-bottom: 1px solid rgba(255,255,255,.28); }
-    .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-    .brand { display: inline-flex; align-items: center; gap: 11px; color: #fff; }
-    .brand-mark { width: 29px; height: 29px; display: grid; place-items: center; border: 1px solid var(--sky); border-radius: 50%; color: var(--sky); font: 700 16px/1 "Playfair Display", serif; }
-    .brand-copy { display: grid; line-height: 1.05; }
-    .brand-copy strong { font-size: 13px; letter-spacing: .08em; }
-    .brand-copy small { margin-top: 4px; font-size: 8px; letter-spacing: .18em; opacity: .7; }
-    .nav-links { display: flex; align-items: center; gap: clamp(16px, 2.4vw, 31px); }
-    .nav-links a { position: relative; color: #fff; font-size: 13px; font-weight: 500; white-space: nowrap; }
-    .nav-links a:not(.nav-cta)::after { position: absolute; right: 0; bottom: -5px; left: auto; width: 0; height: 1px; background: var(--sky); content: ""; transition: width .25s ease; }
-    .nav-links a:not(.nav-cta):hover::after { right: auto; left: 0; width: 100%; }
-    .nav-links .nav-cta { padding: 8px 13px; border: 1px solid rgba(255,255,255,.72); }
-    .nav-links .nav-cta:hover { color: var(--navy); background: #fff; }
-    .menu-toggle { display: none; width: 42px; height: 42px; border: 1px solid rgba(255,255,255,.7); color: #fff; background: transparent; font-size: 23px; line-height: 1; }
+    .hero { position: relative; overflow: hidden; background: linear-gradient(112deg, #fff8f9 0%, #fdf0f3 53%, #f8e6eb 100%); }
+    .hero-grid { min-height: 620px; display: grid; grid-template-columns: 1fr .94fr; gap: clamp(35px, 6vw, 80px); align-items: center; padding-block: 58px 68px; }
+    .hero-copy { position: relative; z-index: 1; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 15px; color: var(--pink-deep); font-size: 11px; font-weight: 700; letter-spacing: .16em; }
+    .eyebrow::before { width: 25px; height: 1px; background: currentColor; content: ""; }
+    .hero-pill { width: fit-content; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px; padding: 6px 13px; border: 1px solid #f0cbd3; border-radius: 999px; color: #a34458; background: rgba(255,255,255,.62); font-size: 12px; font-weight: 600; }
+    .hero h1 { max-width: 650px; margin: 0; font: 700 clamp(39px, 5.2vw, 64px)/1.42 "Noto Serif TC", serif; letter-spacing: .025em; }
+    .hero h1 em { position: relative; z-index: 0; color: var(--pink-deep); font-style: normal; white-space: nowrap; }
+    .hero h1 em::after { position: absolute; z-index: -1; right: -3px; bottom: 6px; left: -3px; height: 14px; background: rgba(242,109,133,.2); content: ""; }
+    .hero-lede { max-width: 500px; margin: 18px 0 0; color: #6d5b60; font-size: 15px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 25px; }
+    .button { min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 10px 20px; border: 1px solid transparent; border-radius: 3px; font-size: 13px; font-weight: 700; transition: transform .2s, background .2s, color .2s; }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { color: #fff; background: linear-gradient(110deg, var(--pink), #ed8294); box-shadow: 0 8px 19px rgba(207,78,104,.2); }
+    .button-primary:hover { background: var(--pink-deep); }
+    .button-outline { border-color: #df9eab; color: #a34458; background: rgba(255,255,255,.7); }
+    .button-outline:hover { color: #fff; background: var(--pink-deep); }
+    .hero-promises { display: flex; flex-wrap: wrap; gap: 12px 20px; margin: 28px 0 0; padding: 0; list-style: none; }
+    .hero-promises li { display: flex; align-items: flex-start; gap: 8px; color: #625458; font-size: 11px; }
+    .hero-promises b { display: block; color: var(--ink); font-size: 12px; }
+    .hero-promises span[aria-hidden] { font-size: 17px; }
+    .hero-visual { position: relative; width: 100%; max-width: 510px; justify-self: end; }
+    .hero-photo { aspect-ratio: 4 / 4.25; object-fit: cover; border: 8px solid #fff; box-shadow: var(--shadow); }
+    .floating-note { position: absolute; max-width: 240px; display: flex; align-items: center; gap: 9px; padding: 12px 15px; color: var(--berry); background: rgba(255,255,255,.94); box-shadow: 0 8px 26px rgba(59,30,37,.12); font-size: 11px; line-height: 1.5; }
+    .floating-note strong { display: block; font-size: 12px; }
+    .floating-note--top { top: 12%; left: -58px; }
+    .floating-note--bottom { right: -27px; bottom: 10%; }
+    .floating-icon { font-size: 21px; }
+    .petal { position: absolute; z-index: 0; opacity: .55; animation: floatPetal 5s ease-in-out infinite; }
+    .petal-one { top: 13%; right: 42%; font-size: 20px; }
+    .petal-two { right: 5%; bottom: 10%; animation-delay: 1.3s; font-size: 16px; }
+    .petal-three { top: 52%; left: 4%; animation-delay: 2.2s; font-size: 14px; }
+    @keyframes floatPetal { 0%,100% { transform: translateY(0) rotate(-8deg); } 50% { transform: translateY(-12px) rotate(8deg); } }
 
-    .hero { position: relative; min-height: 704px; overflow: hidden; color: #fff; background: var(--navy); isolation: isolate; }
-    .hero::before { position: absolute; z-index: -2; top: -320px; right: -210px; width: 810px; height: 810px; border-radius: 50%; background: radial-gradient(circle, rgba(117,198,232,.38), rgba(12,91,149,.18) 38%, transparent 69%); content: ""; }
-    .hero::after { position: absolute; z-index: -1; right: 12%; bottom: -430px; width: 780px; height: 780px; border: 1px solid rgba(117,198,232,.18); border-radius: 50%; box-shadow: 0 0 0 65px rgba(117,198,232,.035), 0 0 0 154px rgba(117,198,232,.025); content: ""; }
-    .hero-grid { min-height: 704px; display: grid; grid-template-columns: 1.02fr .98fr; gap: 45px; align-items: center; padding: 122px 0 72px; }
-    .hero-copy { position: relative; z-index: 2; }
-    .hero .eyebrow { color: var(--sky); }
-    .hero h1 { max-width: 650px; margin: 0 0 23px; font: 800 clamp(42px, 5.5vw, 68px)/1.22 "Noto Serif TC", serif; letter-spacing: .05em; }
-    .hero h1 span { color: var(--sky); }
-    .hero-lede { max-width: 500px; margin: 0; color: rgba(255,255,255,.79); font-size: 16px; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 31px; }
-    .hero-note { margin: 31px 0 0; color: rgba(255,255,255,.55); font: 600 11px/1.5 "Playfair Display", serif; letter-spacing: .16em; }
-    .scroll-cue { position: absolute; bottom: 35px; left: 0; display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,.63); font-size: 10px; font-weight: 600; letter-spacing: .18em; }
-    .scroll-cue::before { width: 38px; height: 1px; background: var(--sky); content: ""; }
+    .section { padding: 94px 0; }
+    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 30px; }
+    .section-title { margin: 0; font: 700 clamp(29px, 3.5vw, 43px)/1.35 "Noto Serif TC", serif; letter-spacing: .025em; }
+    .section-heading > p { max-width: 375px; margin: 0; color: var(--muted); font-size: 14px; }
+    .products-section { background: #fff; }
+    .filter-tabs { display: flex; flex-wrap: wrap; gap: 9px; margin: 0 0 26px; }
+    .tab-btn { min-height: 38px; padding: 7px 15px; border: 1px solid var(--line); border-radius: 999px; color: #65575a; background: #fff; font-size: 12px; font-weight: 600; transition: .2s; }
+    .tab-btn:hover, .tab-btn.active { border-color: var(--pink); color: #fff; background: var(--pink); }
+    .product-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px 17px; }
+    .product-card { min-width: 0; display: flex; flex-direction: column; background: #fff; }
+    .product-image-wrap { position: relative; overflow: hidden; background: var(--pink-soft); }
+    .product-image { aspect-ratio: 1 / 1.08; object-fit: cover; transition: transform .5s ease; }
+    .product-card:hover .product-image { transform: scale(1.06); }
+    .product-tag { position: absolute; top: 12px; left: 12px; padding: 5px 9px; color: #8e3c50; background: rgba(255,255,255,.93); font-size: 10px; font-weight: 700; }
+    .like-button { position: absolute; top: 10px; right: 10px; width: 35px; height: 35px; display: grid; place-items: center; border: 0; border-radius: 50%; color: #765c63; background: rgba(255,255,255,.94); font-size: 18px; transition: color .2s, transform .2s; }
+    .like-button:hover { transform: scale(1.08); }
+    .like-button.liked { color: var(--pink-deep); }
+    .product-info { display: flex; flex: 1; flex-direction: column; padding: 14px 2px 0; }
+    .product-category { margin: 0 0 5px; color: var(--pink-deep); font: 600 10px/1.4 "Playfair Display", "Noto Sans TC", serif; letter-spacing: .09em; text-transform: uppercase; }
+    .product-info h3 { min-height: 48px; margin: 0; font: 700 15px/1.6 "Noto Serif TC", serif; }
+    .product-description { min-height: 66px; margin: 7px 0 12px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+    .product-price { display: flex; align-items: baseline; gap: 8px; margin-top: auto; }
+    .product-price strong { color: var(--pink-deep); font: 700 18px/1.4 "Playfair Display", "Noto Sans TC", serif; }
+    .product-price del { color: #95888a; font-size: 11px; }
+    .add-button { width: 100%; min-height: 40px; margin-top: 11px; border: 1px solid var(--pink); color: var(--pink-deep); background: #fff; font-size: 12px; font-weight: 700; transition: color .2s, background .2s; }
+    .add-button:hover { color: #fff; background: var(--pink); }
+    .empty-filter { grid-column: 1 / -1; padding: 32px; color: var(--muted); text-align: center; }
 
-    .hero-art { position: relative; align-self: stretch; min-width: 0; min-height: 470px; overflow: visible; display: flex; align-items: center; justify-content: center; }
-    .hero-photo {
-      width: 100%;
-      max-width: 400px;
-      aspect-ratio: 4 / 3;
-      height: auto;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-      box-shadow: 24px 24px 0 rgba(117, 198, 232, 0.1), var(--shadow);
-      border: 7px solid rgba(255,255,255,.12);
-      background: #dfeef4;
-    }
-    .hero-photo-wrap {
-      position: relative;
-      display: inline-block;
-      width: min(400px, 100%);
-      max-width: 100%;
-    }
+    .why-section { background: var(--pink-soft); }
+    .center-heading { margin-bottom: 38px; text-align: center; }
+    .center-heading .eyebrow { justify-content: center; }
+    .center-heading .eyebrow::after { width: 25px; height: 1px; background: currentColor; content: ""; }
+    .center-heading > p:last-child { max-width: 580px; margin: 12px auto 0; color: var(--muted); font-size: 14px; }
+    .feature-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid #edcfd6; border-bottom: 1px solid #edcfd6; }
+    .feature { padding: 27px 24px; border-right: 1px solid #edcfd6; }
+    .feature:last-child { border-right: 0; }
+    .feature-icon { width: 42px; height: 42px; display: grid; place-items: center; margin-bottom: 13px; border-radius: 50%; color: var(--pink-deep); background: #fff; font-size: 20px; }
+    .feature h3 { margin: 0; font: 700 16px/1.5 "Noto Serif TC", serif; }
+    .feature p { margin: 8px 0 0; color: var(--muted); font-size: 12px; }
 
-    /* Story */
-    .story { padding: 118px 0; background: #fff; }
-    .story-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(45px, 8vw, 105px); align-items: center; }
-    .story-visual { position: relative; min-height: 416px; }
-    .seal { position: absolute; top: 0; left: 0; width: min(310px, 100%); aspect-ratio: 1; display: grid; place-items: center; border: 1px solid #a8d2df; border-radius: 50%; color: var(--blue); background: radial-gradient(circle at 35% 30%, #fff 0, #eaf6f8 68%, #d9edf1 100%); }
-    .seal::before, .seal::after { position: absolute; border: 1px solid rgba(12,91,149,.25); border-radius: 50%; content: ""; }
-    .seal::before { inset: 17px; }
-    .seal::after { inset: 44px; border-style: dashed; }
-    .seal-inner { position: relative; z-index: 1; display: grid; gap: 7px; text-align: center; }
-    .seal-inner b { font: 700 42px/1 "Playfair Display", serif; }
-    .seal-inner span { font-size: 13px; font-weight: 700; letter-spacing: .1em; }
-    .seal-inner small { font: 600 9px/1.5 "Playfair Display", serif; letter-spacing: .15em; }
-    .blue-note { position: absolute; right: 0; bottom: 0; width: 235px; padding: 27px 28px; color: #fff; background: var(--navy); box-shadow: var(--shadow); }
-    .blue-note .eyebrow { margin-bottom: 9px; color: var(--sky); font-size: 9px; }
-    .blue-note p { margin: 0; font: 700 20px/1.55 "Noto Serif TC", serif; letter-spacing: .05em; }
-    .story-copy p { margin: 19px 0 0; color: var(--muted); }
-    .inline-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 24px; padding-bottom: 5px; border-bottom: 1px solid var(--blue); color: var(--blue); font-weight: 700; }
-    .inline-link:hover { color: var(--navy); }
+    .custom-section { padding: 86px 0; color: #fff; background: linear-gradient(115deg, #3b1e25, #522733); }
+    .custom-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 54px; align-items: center; }
+    .custom-section .eyebrow { color: #f3a3b2; }
+    .custom-section h2 { max-width: 620px; margin: 0; font: 700 clamp(30px, 4vw, 45px)/1.4 "Noto Serif TC", serif; }
+    .custom-copy > p:not(.eyebrow) { max-width: 540px; margin: 15px 0 0; color: rgba(255,255,255,.74); font-size: 14px; }
+    .occasion-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 24px; }
+    .occasion-list span { padding: 5px 11px; border: 1px solid rgba(255,255,255,.28); color: #f7e7e9; font-size: 11px; }
+    .custom-section .button-primary { color: var(--berry); background: #f5b0bc; box-shadow: none; }
+    .custom-section .button-primary:hover { background: #ffd4dc; }
+    .process-box { padding: 27px; border: 1px solid rgba(255,255,255,.22); background: rgba(255,255,255,.08); backdrop-filter: blur(8px); }
+    .process-box h3 { margin: 0 0 18px; color: #f4b3c0; font: 600 12px/1.4 "Playfair Display", serif; letter-spacing: .14em; }
+    .process-step { display: grid; grid-template-columns: 34px 1fr; gap: 13px; align-items: center; padding: 12px 0; border-top: 1px solid rgba(255,255,255,.16); }
+    .process-step b { width: 30px; height: 30px; display: grid; place-items: center; border: 1px solid #e998a8; border-radius: 50%; color: #f4b3c0; font: 600 13px "Playfair Display", serif; }
+    .process-step strong { display: block; font: 600 14px/1.5 "Noto Serif TC", serif; }
+    .process-step small { color: rgba(255,255,255,.65); font-size: 11px; }
+    .urgent-note { margin: 14px 0 0; color: #f4b3c0; font-size: 11px; }
 
-    /* Coffee collection */
-    .coffee { padding: 111px 0 120px; background: var(--mist); }
-    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin-bottom: 39px; }
-    .section-heading p { max-width: 370px; margin: 0; color: var(--muted); }
-    .coffee-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 19px; }
-    .coffee-card { position: relative; min-height: 384px; display: flex; flex-direction: column; overflow: hidden; padding: 30px; color: #fff; background: var(--navy); box-shadow: var(--shadow); }
-    .coffee-card:nth-child(2) { background: #106396; }
-    .coffee-card:nth-child(3) { background: #164c68; }
-    .coffee-card::after { position: absolute; right: -90px; bottom: -90px; width: 260px; height: 260px; border: 1px solid rgba(255,255,255,.24); border-radius: 50%; box-shadow: 0 0 0 27px rgba(255,255,255,.045), 0 0 0 65px rgba(255,255,255,.025); content: ""; }
-    .card-top, .coffee-card h3, .flavour, .card-footer { position: relative; z-index: 1; }
-    .card-top { color: var(--sky); font: 700 12px/1.3 "Playfair Display", serif; letter-spacing: .12em; }
-    .origin { margin: 25px 0 8px; color: rgba(255,255,255,.69); font-size: 10px; font-weight: 700; letter-spacing: .15em; }
-    .coffee-card h3 { margin: 0; font: 700 26px/1.38 "Noto Serif TC", serif; letter-spacing: .04em; }
-    .flavour { margin: 15px 0 0; color: rgba(255,255,255,.73); font-size: 14px; }
-    .card-footer { display: flex; align-items: end; justify-content: space-between; gap: 14px; margin-top: auto; }
-    .price { font: 700 15px/1.3 "Playfair Display", serif; letter-spacing: .04em; }
-    .save-coffee { padding: 0 0 5px; border: 0; border-bottom: 1px solid rgba(255,255,255,.72); color: #fff; background: transparent; font-size: 13px; font-weight: 700; white-space: nowrap; transition: color .2s, border-color .2s; }
-    .save-coffee:hover { border-color: var(--sand); color: var(--sand); }
+    .guide-section { background: #fff; }
+    .guide-grid { display: grid; grid-template-columns: .92fr 1.08fr; gap: clamp(35px, 7vw, 82px); align-items: center; }
+    .guide-image-wrap { position: relative; }
+    .guide-image { aspect-ratio: 4 / 4.1; object-fit: cover; }
+    .guide-caption { position: absolute; right: -15px; bottom: 20px; max-width: 210px; padding: 14px 17px; color: var(--berry); background: #fff; box-shadow: var(--shadow); font: 600 13px/1.7 "Noto Serif TC", serif; }
+    .guide-copy > p:not(.eyebrow) { margin: 13px 0 22px; color: var(--muted); font-size: 14px; }
+    .guide-steps { border-top: 1px solid var(--line); }
+    .guide-step { display: grid; grid-template-columns: 43px 1fr; gap: 14px; padding: 17px 0; border-bottom: 1px solid var(--line); }
+    .guide-step > span { color: var(--pink-deep); font: 600 22px/1.3 "Playfair Display", serif; }
+    .guide-step h3 { margin: 0; font: 700 15px/1.5 "Noto Serif TC", serif; }
+    .guide-step p { margin: 4px 0 0; color: var(--muted); font-size: 12px; }
 
-    /* Brew */
-    .brew { padding: 118px 0; background: #fff; }
-    .brew-grid { display: grid; grid-template-columns: .93fr 1.07fr; gap: clamp(42px, 8vw, 90px); align-items: center; }
-    .brew-art { position: relative; height: 414px; overflow: hidden; background: linear-gradient(136deg, #e3f4f7 0 48%, #f8fcfc 48% 100%); }
-    .brew-art::before { position: absolute; top: 37px; left: 35px; width: 68px; height: 41px; border-top: 1px solid #6cb4ce; border-bottom: 1px solid #6cb4ce; content: ""; }
-    .brew-art::after { position: absolute; top: 57px; left: 35px; width: 43px; border-top: 1px solid #6cb4ce; content: ""; }
-    .water-rings { position: absolute; top: 67px; left: 50%; width: 245px; height: 245px; border: 1px solid rgba(12,91,149,.27); border-radius: 50%; transform: translateX(-50%); box-shadow: 0 0 0 30px rgba(117,198,232,.12), 0 0 0 74px rgba(117,198,232,.065); }
-    .water-rings::before { position: absolute; top: 18px; left: 50%; width: 1px; height: 58px; background: #6bb8d1; content: ""; transform: translateX(-50%); }
-    .dripper { position: absolute; z-index: 2; top: 134px; left: 50%; width: 147px; height: 151px; border: 7px solid var(--blue); border-top: 0; background: linear-gradient(130deg, rgba(255,255,255,.85), rgba(117,198,232,.25)); clip-path: polygon(0 0, 100% 0, 74% 100%, 26% 100%); transform: translateX(-50%); }
-    .dripper::after { position: absolute; right: 32px; bottom: 19px; left: 32px; height: 33px; border-top: 2px solid rgba(12,91,149,.55); border-bottom: 2px solid rgba(12,91,149,.35); content: ""; }
-    .carafe { position: absolute; z-index: 1; bottom: 56px; left: 50%; width: 139px; height: 106px; border: 6px solid var(--blue); border-radius: 16px 16px 45% 45%; background: rgba(117,198,232,.23); transform: translateX(-50%); }
-    .carafe::before { position: absolute; top: -28px; left: 29px; width: 70px; height: 28px; border: 6px solid var(--blue); border-bottom: 0; border-radius: 50% 50% 0 0; content: ""; }
-    .brew-caption { position: absolute; right: 24px; bottom: 19px; color: var(--blue); text-align: right; }
-    .brew-caption span { display: block; font: 700 11px/1.5 "Playfair Display", serif; letter-spacing: .12em; }
-    .brew-caption strong { font: 700 24px/1.1 "Playfair Display", serif; }
-    .brew-copy > p { margin: 18px 0 25px; color: var(--muted); }
-    .brew-steps { border-top: 1px solid var(--line); }
-    .brew-step { display: grid; grid-template-columns: 52px 1fr; gap: 15px; padding: 18px 0; border-bottom: 1px solid var(--line); }
-    .step-number { color: var(--blue); font: 700 24px/1 "Playfair Display", serif; }
-    .brew-step h3 { margin: 0; font: 700 16px/1.5 "Noto Serif TC", serif; }
-    .brew-step p { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
+    .reviews-section { background: #fff7f8; }
+    .review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .review { padding: 23px 22px; border-top: 2px solid #e8a0ae; background: #fff; }
+    .stars { color: var(--gold); font-size: 14px; letter-spacing: 2px; }
+    .review blockquote { min-height: 100px; margin: 13px 0 18px; color: #55484b; font: 500 14px/1.9 "Noto Serif TC", serif; }
+    .review-person { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 12px; border-top: 1px solid var(--line); }
+    .review-person strong { font-size: 12px; }
+    .review-person span { color: var(--muted); font-size: 10px; text-align: right; }
 
-    /* Subscribe and footer */
-    .visit { position: relative; overflow: hidden; padding: 108px 0 113px; color: #fff; text-align: center; background: var(--navy); }
-    .visit::before, .visit::after { position: absolute; width: 390px; height: 390px; border: 1px solid rgba(117,198,232,.17); border-radius: 50%; content: ""; }
-    .visit::before { top: -245px; left: -153px; box-shadow: 0 0 0 45px rgba(117,198,232,.035); }
-    .visit::after { right: -170px; bottom: -260px; box-shadow: 0 0 0 50px rgba(117,198,232,.035); }
-    .visit .wrap { position: relative; z-index: 1; max-width: 715px; }
-    .visit .eyebrow { justify-content: center; color: var(--sky); }
-    .visit h2 { margin: 0; font: 800 clamp(30px, 4vw, 46px)/1.3 "Noto Serif TC", serif; letter-spacing: .045em; }
-    .visit p { max-width: 510px; margin: 19px auto 29px; color: rgba(255,255,255,.72); }
-    .subscribe-form { display: flex; min-height: 58px; border: 1px solid rgba(255,255,255,.62); }
-    .subscribe-form input { min-width: 0; flex: 1; padding: 0 18px; border: 0; color: #fff; outline: none; background: transparent; }
-    .subscribe-form input::placeholder { color: rgba(255,255,255,.56); }
-    .subscribe-form button { padding: 0 23px; border: 0; color: var(--navy); background: var(--sand); font-size: 14px; font-weight: 700; white-space: nowrap; transition: background .2s; }
-    .subscribe-form button:hover { background: #f1cb8b; }
-    .site-footer { padding: 66px 0 23px; color: rgba(255,255,255,.68); background: #031c31; }
-    .footer-grid { display: grid; grid-template-columns: 1.45fr .8fr 1fr; gap: 55px; padding-bottom: 48px; }
-    .footer-brand .brand { margin-bottom: 16px; }
-    .footer-brand p { max-width: 330px; margin: 0; font-size: 14px; }
-    .footer-title { margin: 0 0 14px; color: var(--sky); font-size: 11px; font-weight: 700; letter-spacing: .18em; }
-    .footer-links { display: grid; gap: 8px; font-size: 14px; }
-    .footer-links a:hover { color: var(--sky); }
+    .newsletter { padding: 70px 0; color: #fff; background: #9c485b; }
+    .newsletter-inner { display: grid; grid-template-columns: 1fr minmax(340px, .8fr); gap: 40px; align-items: center; }
+    .newsletter .eyebrow { color: #ffd9df; }
+    .newsletter h2 { margin: 0; font: 700 clamp(26px, 3vw, 36px)/1.4 "Noto Serif TC", serif; }
+    .newsletter p:not(.eyebrow) { margin: 8px 0 0; color: rgba(255,255,255,.82); font-size: 13px; }
+    .newsletter-form { display: flex; min-height: 50px; border: 1px solid rgba(255,255,255,.65); }
+    .newsletter-form input { min-width: 0; flex: 1; padding: 0 14px; border: 0; color: #fff; background: transparent; outline: none; }
+    .newsletter-form input::placeholder { color: rgba(255,255,255,.7); }
+    .newsletter-form button { padding: 0 17px; border: 0; color: var(--berry); background: #fff; font-size: 12px; font-weight: 700; white-space: nowrap; }
+    .newsletter-form button:hover { background: #fbe6ea; }
+
+    .site-footer { padding: 57px 0 20px; color: rgba(255,255,255,.72); background: #251318; }
+    .footer-grid { display: grid; grid-template-columns: 1.3fr .8fr 1fr 1.2fr; gap: 32px; padding-bottom: 38px; }
+    .site-footer .brand { margin-bottom: 14px; color: #fff; }
+    .site-footer .brand-copy small { color: rgba(255,255,255,.58); }
+    .site-footer .brand-mark { color: #f2a2b0; background: rgba(255,255,255,.1); }
+    .footer-brand > p { max-width: 270px; margin: 0; font-size: 12px; }
+    .footer-title { margin: 0 0 13px; color: #f2a2b0; font-size: 11px; font-weight: 700; letter-spacing: .12em; }
+    .footer-links { display: grid; gap: 7px; font-size: 12px; }
+    .footer-links a:hover { color: #fff; }
     .footer-links address { font-style: normal; }
-    .footer-bottom { display: flex; justify-content: space-between; gap: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.17); color: rgba(255,255,255,.44); font: 600 10px/1.5 "Playfair Display", serif; letter-spacing: .1em; }
+    .footer-bottom { display: flex; justify-content: space-between; gap: 20px; padding-top: 17px; border-top: 1px solid rgba(255,255,255,.16); color: rgba(255,255,255,.48); font: 500 10px/1.5 "Playfair Display", "Noto Sans TC", serif; }
 
-    .toast { position: fixed; z-index: 50; right: 22px; bottom: 22px; max-width: min(370px, calc(100vw - 44px)); padding: 14px 18px; border-left: 3px solid var(--sand); color: #fff; background: var(--navy); box-shadow: var(--shadow); font-size: 14px; opacity: 0; pointer-events: none; transform: translateY(12px); transition: opacity .25s ease, transform .25s ease; }
-    .toast.show { opacity: 1; transform: translateY(0); }
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
+    .cart-backdrop { position: fixed; z-index: 39; inset: 0; visibility: hidden; background: rgba(34,20,24,.45); opacity: 0; transition: opacity .25s, visibility .25s; }
+    .cart-backdrop.active { visibility: visible; opacity: 1; }
+    .cart-drawer { position: fixed; z-index: 40; top: 0; right: 0; bottom: 0; width: min(440px, 100%); display: flex; flex-direction: column; padding: 24px; background: #fffafb; box-shadow: -15px 0 40px rgba(36,18,23,.16); transform: translateX(105%); transition: transform .3s ease; }
+    .cart-drawer.active { transform: translateX(0); }
+    .cart-header { display: flex; align-items: center; justify-content: space-between; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+    .cart-header h2 { margin: 0; font: 700 22px "Noto Serif TC", serif; }
+    .cart-close { width: 38px; height: 38px; border: 1px solid var(--line); color: var(--berry); background: #fff; font-size: 21px; }
+    .cart-items { flex: 1; overflow: auto; padding: 10px 0; }
+    .cart-empty { padding: 42px 10px; color: var(--muted); text-align: center; }
+    .cart-empty span { display: block; margin-bottom: 12px; font-size: 34px; }
+    .cart-item { display: grid; grid-template-columns: 76px 1fr auto; gap: 12px; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--line); }
+    .cart-item img { width: 76px; height: 82px; object-fit: cover; }
+    .cart-item h3 { margin: 0; font: 600 13px/1.5 "Noto Serif TC", serif; }
+    .cart-item p { margin: 5px 0 0; color: var(--pink-deep); font-size: 12px; font-weight: 700; }
+    .cart-item small { color: var(--muted); font-size: 11px; }
+    .remove-item { align-self: start; border: 0; color: #806f73; background: transparent; font-size: 11px; text-decoration: underline; }
+    .cart-footer { padding-top: 17px; border-top: 1px solid var(--line); }
+    .cart-total { display: flex; justify-content: space-between; margin-bottom: 14px; font-weight: 700; }
+    .cart-total strong { color: var(--pink-deep); font: 700 20px "Playfair Display", "Noto Sans TC", serif; }
+    .checkout-button { width: 100%; min-height: 48px; border: 0; color: #fff; background: var(--pink); font-weight: 700; }
+    .checkout-button:hover { background: var(--pink-deep); }
+    .toast { position: fixed; z-index: 60; right: 50%; bottom: 24px; max-width: min(400px, calc(100vw - 36px)); padding: 13px 19px; color: #fff; background: var(--berry); box-shadow: var(--shadow); font-size: 13px; opacity: 0; pointer-events: none; transform: translate(50%, 12px); transition: opacity .25s, transform .25s; }
+    .toast.show { opacity: 1; transform: translate(50%, 0); }
+    .consult-dialog { width: min(480px, calc(100% - 32px)); padding: 0; border: 0; color: var(--ink); box-shadow: var(--shadow); }
+    .consult-dialog::backdrop { background: rgba(34,20,24,.55); }
+    .dialog-content { padding: 28px; }
+    .dialog-content h2 { margin: 0; font: 700 25px "Noto Serif TC", serif; }
+    .dialog-content > p { margin: 8px 0 20px; color: var(--muted); font-size: 13px; }
+    .dialog-content label { display: block; margin-top: 12px; font-size: 12px; font-weight: 700; }
+    .dialog-content input, .dialog-content textarea { width: 100%; margin-top: 5px; padding: 10px; border: 1px solid var(--line); background: #fff; }
+    .dialog-content textarea { min-height: 90px; resize: vertical; }
+    .dialog-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 18px; }
+    .dialog-cancel { min-height: 42px; padding: 8px 15px; border: 1px solid var(--line); color: var(--ink); background: #fff; font-size: 12px; }
+    .dialog-actions .button { min-height: 42px; }
+    .reveal { opacity: 0; transform: translateY(15px); transition: opacity .55s ease, transform .55s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    @media (max-width: 820px) {
-      .menu-toggle { display: grid; place-items: center; }
-      .nav { position: relative; }
-      .nav-links { position: absolute; top: 78px; right: -24px; left: -24px; max-height: 0; display: grid; gap: 0; overflow: hidden; background: #05233c; transition: max-height .35s ease; }
-      .nav-links.open { max-height: 300px; border-top: 1px solid rgba(255,255,255,.16); }
-      .nav-links a { display: block; padding: 13px 24px; }
-      .nav-links .nav-cta { margin: 5px 24px 15px; padding: 10px 13px; text-align: center; }
-      .hero { min-height: 710px; }
-      .hero-grid { min-height: 710px; grid-template-columns: 1fr; gap: 0; padding: 118px 0 43px; }
-      .hero-art { min-height: 276px; margin-top: -9px; }
-      .hero-art .sun { top: 19px; right: 20%; width: 130px; }
-      .mountain { height: 180px; }
-      .mountain--back { bottom: 69px; height: 150px; }
-      .coffee-vessel { right: 17%; bottom: -12px; transform: scale(.72); transform-origin: bottom right; }
-      .art-label { display: none; }
-      .scroll-cue { display: none; }
-      .story-grid, .brew-grid { grid-template-columns: 1fr; }
-      .story-visual { max-width: 525px; width: 100%; min-height: 400px; }
-      .coffee-grid { grid-template-columns: repeat(2, 1fr); }
-      .coffee-card:nth-child(3) { grid-column: span 2; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
+    @media (max-width: 992px) {
+      .nav-menu { gap: 14px; }
+      .nav-menu a { font-size: 12px; }
+      .nav-menu .nav-cta { display: none; }
+      .hero-grid { grid-template-columns: 1fr  .8fr; gap: 30px; }
+      .hero h1 { font-size: clamp(38px, 5vw, 52px); }
+      .product-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .feature-grid { grid-template-columns: repeat(2, 1fr); }
+      .feature:nth-child(2) { border-right: 0; }
+      .feature:nth-child(-n+2) { border-bottom: 1px solid #edcfd6; }
+      .custom-grid { grid-template-columns: 1fr; gap: 30px; }
+      .process-box { max-width: 580px; }
+      .footer-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .wrap { width: min(100% - 36px, 620px); }
+      .announcement { min-height: 32px; font-size: 10px; }
+      .nav { min-height: 68px; }
+      .brand-copy strong { font-size: 19px; }
+      .mobile-toggle { display: grid; place-items: center; }
+      .nav-tools { margin-left: auto; }
+      .nav-menu { position: absolute; top: 68px; right: -18px; left: -18px; max-height: 0; display: grid; gap: 0; overflow: hidden; background: #fff; box-shadow: 0 12px 18px rgba(59,30,37,.08); transition: max-height .3s ease; }
+      .nav-menu.open { max-height: 420px; border-top: 1px solid var(--line); }
+      .nav-menu a { padding: 12px 24px; border-bottom: 1px solid #f5e8eb; font-size: 14px; }
+      .nav-menu .nav-cta { display: block; margin: 10px 18px 16px; padding: 11px; color: #fff; text-align: center; }
+      .hero-grid { grid-template-columns: 1fr; gap: 27px; padding-block: 48px 45px; text-align: center; }
+      .hero-copy { display: flex; flex-direction: column; align-items: center; }
+      .hero .eyebrow { justify-content: center; }
+      .hero h1 { font-size: clamp(37px, 8vw, 54px); }
+      .hero-lede { font-size: 14px; }
+      .hero-promises { justify-content: center; text-align: left; }
+      .hero-visual { width: min(100%, 450px); justify-self: center; }
+      .hero-photo { aspect-ratio: 1.25 / 1; }
+      .floating-note--top { left: -8px; }
+      .floating-note--bottom { right: -8px; }
+      .petal-one { top: 4%; right: 7%; }
+      .section { padding: 72px 0; }
+      .section-heading { display: block; }
+      .section-heading > p { margin-top: 12px; }
+      .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 23px 13px; }
+      .product-description { min-height: 83px; }
+      .guide-grid { grid-template-columns: 1fr; }
+      .guide-image-wrap { max-width: 480px; }
+      .newsletter-inner { grid-template-columns: 1fr; gap: 23px; }
+      .review-grid { grid-template-columns: 1fr; }
+      .review blockquote { min-height: 0; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px 18px; }
       .footer-brand { grid-column: 1 / -1; }
     }
-    @media (max-width: 560px) {
-      .wrap { width: calc(100% - 34px); }
-      .nav-links { right: -17px; left: -17px; }
-      .hero { min-height: 680px; }
-      .hero-grid { min-height: 680px; padding-top: 106px; }
-      .hero h1 { font-size: 40px; }
-      .hero-lede { font-size: 14px; }
-      .hero-actions { gap: 9px; margin-top: 24px; }
-      .hero-actions .button, .hero-actions .outline-link { min-height: 46px; padding: 8px 15px; font-size: 13px; }
-      .hero-note { margin-top: 21px; }
-      .hero-art { min-height: 219px; }
-      .hero-art .sun { width: 92px; }
-      .coffee-vessel { right: 5%; bottom: -48px; transform: scale(.57); }
-      .story, .coffee, .brew { padding: 76px 0; }
-      .seal { width: min(245px, 100%); }
-      .seal-inner b { font-size: 35px; }
-      .story-visual { min-height: 347px; }
-      .blue-note { width: 185px; padding: 20px; }
-      .blue-note p { font-size: 16px; }
-      .section-heading { display: block; margin-bottom: 28px; }
-      .section-heading p { margin-top: 14px; font-size: 14px; }
-      .coffee-grid { grid-template-columns: 1fr; }
-      .coffee-card, .coffee-card:nth-child(3) { min-height: 330px; grid-column: auto; }
-      .coffee-card { padding: 25px; }
-      .brew-art { height: 310px; }
-      .water-rings { top: 45px; width: 178px; height: 178px; box-shadow: 0 0 0 23px rgba(117,198,232,.12), 0 0 0 53px rgba(117,198,232,.065); }
-      .dripper { top: 95px; transform: translateX(-50%) scale(.75); }
-      .carafe { bottom: 37px; transform: translateX(-50%) scale(.75); }
-      .visit { padding: 76px 0; }
-      .subscribe-form { display: grid; gap: 0; border: 0; }
-      .subscribe-form input { min-height: 54px; border: 1px solid rgba(255,255,255,.62); }
-      .subscribe-form button { min-height: 54px; margin-top: 10px; }
-      .footer-grid { grid-template-columns: 1fr; gap: 33px; }
+    @media (max-width: 520px) {
+      .wrap { width: calc(100% - 32px); }
+      .announcement { font-size: 9px; }
+      .nav-menu { right: -16px; left: -16px; }
+      .hero-grid { padding-top: 38px; }
+      .hero h1 { font-size: 36px; }
+      .hero-actions { justify-content: center; }
+      .hero-actions .button { min-height: 44px; padding-inline: 13px; font-size: 12px; }
+      .hero-promises { display: grid; grid-template-columns: 1fr; gap: 9px; align-self: stretch; max-width: 290px; }
+      .floating-note { max-width: 190px; padding: 9px 10px; font-size: 9px; }
+      .floating-note strong { font-size: 10px; }
+      .floating-icon { font-size: 17px; }
+      .section { padding: 62px 0; }
+      .section-title { font-size: 29px; }
+      .filter-tabs { gap: 7px; }
+      .tab-btn { padding-inline: 11px; font-size: 11px; }
+      .product-grid { gap: 20px 11px; }
+      .product-info h3 { min-height: 50px; font-size: 13px; }
+      .product-description { min-height: 95px; font-size: 11px; }
+      .product-price strong { font-size: 16px; }
+      .add-button { font-size: 11px; }
+      .feature { padding: 20px 15px; }
+      .feature h3 { font-size: 14px; }
+      .feature p { font-size: 11px; }
+      .custom-section { padding: 65px 0; }
+      .process-box { padding: 20px; }
+      .newsletter { padding: 58px 0; }
+      .newsletter-form { display: grid; grid-template-columns: 1fr; border: 0; gap: 9px; }
+      .newsletter-form input { min-height: 48px; border: 1px solid rgba(255,255,255,.65); }
+      .newsletter-form button { min-height: 48px; }
+      .footer-grid { grid-template-columns: 1fr; }
       .footer-brand { grid-column: auto; }
-      .footer-bottom { display: grid; gap: 8px; }
+      .footer-bottom { display: grid; gap: 7px; }
+      .cart-drawer { padding: 18px; }
+      .dialog-content { padding: 22px; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
       .reveal { opacity: 1; transform: none; }
     }
   </style>
 </head>
 <body>
+  <div class="announcement">✿ 全館滿 NT$ 1,500 免運費　｜　首次加入會員現折 NT$ 100　｜　台北／新北特快當日送達 ✿</div>
   <header class="site-header" id="top">
     <nav class="nav wrap" aria-label="主要導覽">
-      <a class="brand" href="#top" aria-label="回到藍天咖啡首頁">
-        <span class="brand-mark" aria-hidden="true">B</span>
-        <span class="brand-copy"><strong>藍天咖啡</strong><small>BLUE SKY COFFEE</small></span>
+      <a class="brand" href="#top" aria-label="花點時間首頁">
+        <span class="brand-mark" aria-hidden="true">✿</span>
+        <span class="brand-copy"><strong>花點時間</strong><small>TAKE TIME FOR FLOWERS</small></span>
       </a>
-      <button class="menu-toggle" type="button" aria-controls="navLinks" aria-expanded="false" aria-label="開啟導覽選單">☰</button>
-      <div class="nav-links" id="navLinks">
-        <a href="#story">我們的故事</a>
-        <a href="#coffee">本季選豆</a>
-        <a href="#brew">沖煮日常</a>
-        <a class="nav-cta" href="#visit">訂閱風味通信</a>
+      <div class="nav-menu" id="navMenu">
+        <a href="#bouquets">熱銷花束</a>
+        <a href="#why-us">品牌理念</a>
+        <a href="#custom">客製花禮</a>
+        <a href="#guide">花語與養護</a>
+        <a href="#reviews">好評推薦</a>
+        <a href="#contact">門市資訊</a>
+        <a class="nav-cta" href="#bouquets">立即選購花束</a>
+      </div>
+      <div class="nav-tools">
+        <button class="icon-button" id="cartOpen" type="button" aria-label="開啟購物車，0 件商品" title="購物車">🛒<span class="cart-count" id="cartCount" aria-live="polite">0</span></button>
+        <button class="mobile-toggle" id="mobileToggle" type="button" aria-controls="navMenu" aria-expanded="false" aria-label="開啟導覽選單">☰</button>
       </div>
     </nav>
   </header>
 
   <main>
-    <section class="hero" aria-labelledby="heroTitle">
+    <section class="hero" id="hero" aria-labelledby="heroTitle">
+      <span class="petal petal-one" aria-hidden="true">🌸</span><span class="petal petal-two" aria-hidden="true">✨</span><span class="petal petal-three" aria-hidden="true">🌷</span>
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">HAND BREWED · SLOWLY ROASTED</p>
-          <h1 id="heroTitle">讓風味，在<span>藍天</span>下慢慢抵達。</h1>
-          <p class="hero-lede">藍天咖啡為喜歡手沖的您，挑選值得細品的單一產區咖啡豆。從第一縷花香，到最後一口回甘，每一杯都有屬於自己的晴朗天氣。</p>
-          <div class="hero-actions">
-            <a class="button button--sand" href="#coffee">探索本季咖啡豆 →</a>
-            <a class="outline-link" href="#story">認識藍天</a>
-          </div>
-          <p class="hero-note">TAIPEI · TAIWAN · EST. 2025</p>
-          <span class="scroll-cue">SCROLL TO DISCOVER</span>
+          <span class="hero-pill">✿ 銷售各式各樣好看花束</span>
+          <p class="eyebrow">TAKE A MOMENT, MAKE IT BLOOM</p>
+          <h1 id="heroTitle">在忙碌的世界裡，<br>為自己與所愛<br><em>花點時間</em>。</h1>
+          <p class="hero-lede">產地空運鮮花，揉合柔美粉調美學。為日常留一束花的時間，也把說不出口的溫柔心意，好好送到重要的人手中。</p>
+          <div class="hero-actions"><a class="button button-primary" href="#bouquets">探索本季花束 <span aria-hidden="true">→</span></a><button class="button button-outline" type="button" data-open-consult>專人客製諮詢</button></div>
+          <ul class="hero-promises">
+            <li><span aria-hidden="true">🌿</span><span><b>100% 每日鮮摘</b>產地直送頂級花材</span></li>
+            <li><span aria-hidden="true">🚚</span><span><b>雙北專車當日達</b>專屬保水低溫配送</span></li>
+            <li><span aria-hidden="true">💌</span><span><b>免費手寫小卡</b>傳遞最真摯的心意</span></li>
+          </ul>
         </div>
-        <div class="hero-art" aria-label="咖啡與藍天美景照片">
-          <div class="hero-photo-wrap">
-            <img class="hero-photo" src="images/hero.jfif" alt="窗邊咖啡桌與藍天風景" width="400" height="300">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="story" id="story" aria-labelledby="storyTitle">
-      <div class="wrap story-grid">
-        <div class="story-visual reveal" aria-hidden="true">
-          <div class="seal"><div class="seal-inner"><b>B</b><span>慢一點，更清楚。</span><small>LET THE FLAVOUR SPEAK</small></div></div>
-          <aside class="blue-note"><p class="eyebrow">BLUE SKY NOTE</p><p>一杯好咖啡，從來不是匆忙完成的事。</p></aside>
-        </div>
-        <div class="story-copy reveal">
-          <p class="eyebrow">OUR PHILOSOPHY</p>
-          <h2 class="section-title" id="storyTitle">在一杯之間，看見產地的<span class="text-blue">晴朗</span>。</h2>
-          <p>我們相信，精品咖啡的美好不該被複雜掩蓋。以小批次烘焙留住豆子的個性，再用穩定、誠實的手沖，讓風土與時間在杯中變得清晰。</p>
-          <p>給懂得放慢腳步的人，也給每一個想重新認識咖啡的人。</p>
-          <a class="inline-link" href="#brew">看看我們如何沖煮 <span aria-hidden="true">→</span></a>
+        <div class="hero-visual">
+          <img class="hero-photo" src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1100&q=88" alt="柔粉色與白色花朵組成的浪漫花束" width="1100" height="1170">
+          <div class="floating-note floating-note--top"><span class="floating-icon" aria-hidden="true">💐</span><span><strong>當季粉嫩玫瑰</strong>熱銷 No.1・浪漫首選</span></div>
+          <div class="floating-note floating-note--bottom"><span class="floating-icon" aria-hidden="true">⭐</span><span><strong>99.8% 好評回饋</strong>超過 15,000+ 人收到驚喜</span></div>
         </div>
       </div>
     </section>
 
-    <section class="coffee" id="coffee" aria-labelledby="coffeeTitle">
+    <section class="section products-section" id="bouquets" aria-labelledby="bouquetsTitle">
       <div class="wrap">
-        <div class="section-heading reveal">
-          <div><p class="eyebrow">SEASONAL SELECTION</p><h2 class="section-title" id="coffeeTitle">今天，想喝哪一片<span class="text-blue">藍天</span>？</h2></div>
-          <p>三款當季單品，為不同的晨光、午後與靜夜而選。</p>
+        <div class="section-heading reveal"><div><p class="eyebrow">SEASONAL BOUQUETS</p><h2 class="section-title" id="bouquetsTitle">把喜歡的心意，<br>交給一束花。</h2></div><p>從日常桌花到重要時刻的浪漫告白，為每一份心意找到剛剛好的花束。</p></div>
+        <div class="filter-tabs" role="group" aria-label="花束分類">
+          <button class="tab-btn active" type="button" data-filter="all" aria-pressed="true">全部花束（8）</button>
+          <button class="tab-btn" type="button" data-filter="romance" aria-pressed="false">浪漫告白（3）</button>
+          <button class="tab-btn" type="button" data-filter="daily" aria-pressed="false">日常瓶花（2）</button>
+          <button class="tab-btn" type="button" data-filter="celebrate" aria-pressed="false">節慶祝賀（2）</button>
+          <button class="tab-btn" type="button" data-filter="preserved" aria-pressed="false">永生花禮（1）</button>
         </div>
-        <div class="coffee-grid">
-          <article class="coffee-card reveal">
-            <div class="card-top">01 / BRIGHT</div><p class="origin">ETHIOPIA · YIRGACHEFFE</p><h3>衣索比亞・耶加雪菲</h3><p class="flavour">白花、佛手柑、蜂蜜</p>
-            <div class="card-footer"><span class="price">NT$ 520 / 200g</span><button class="save-coffee" type="button" data-coffee="衣索比亞・耶加雪菲">加入收藏 ＋</button></div>
+        <div class="product-grid" id="productGrid">
+          <article class="product-card" data-category="romance">
+            <div class="product-image-wrap"><img class="product-image" src="https://images.unsplash.com/photo-1520763185298-1b434c919102?auto=format&fit=crop&w=700&q=82" alt="厄瓜多粉紅玫瑰與尤加利葉花束" loading="lazy" width="700" height="756"><span class="product-tag">熱銷 No.1</span><button class="like-button" type="button" aria-label="收藏初見心動花束" aria-pressed="false">♡</button></div>
+            <div class="product-info"><p class="product-category">ROMANCE · 01</p><h3>「初見心動」厄瓜多粉紅玫瑰束</h3><p class="product-description">只願與你朝夕相伴。進口重瓣粉玫瑰、白尤加利葉與粉色滿天星。</p><div class="product-price"><strong>NT$ 1,880</strong><del>NT$ 2,280</del></div><button class="add-button" type="button" data-name="「初見心動」厄瓜多粉紅玫瑰束" data-price="1880">＋ 加入購物車</button></div>
           </article>
-          <article class="coffee-card reveal">
-            <div class="card-top">02 / JUICY</div><p class="origin">KENYA · KIRINYAGA</p><h3>肯亞・祈安布</h3><p class="flavour">黑醋栗、洛神、葡萄柚</p>
-            <div class="card-footer"><span class="price">NT$ 580 / 200g</span><button class="save-coffee" type="button" data-coffee="肯亞・祈安布">加入收藏 ＋</button></div>
+          <article class="product-card" data-category="daily">
+            <div class="product-image-wrap"><img class="product-image" src="https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?auto=format&fit=crop&w=700&q=82" alt="柔和粉白色鬱金香花束" loading="lazy" width="700" height="756"><span class="product-tag">店長推薦</span><button class="like-button" type="button" aria-label="收藏微風晨光花束" aria-pressed="false">♡</button></div>
+            <div class="product-info"><p class="product-category">DAILY · 02</p><h3>「微風晨光」荷蘭粉白鬱金香束</h3><p class="product-description">永恆的愛與清新的希望。花型飽滿高雅，適合客廳與工作桌。</p><div class="product-price"><strong>NT$ 1,380</strong><del>NT$ 1,680</del></div><button class="add-button" type="button" data-name="「微風晨光」荷蘭粉白鬱金香束" data-price="1380">＋ 加入購物車</button></div>
           </article>
-          <article class="coffee-card reveal">
-            <div class="card-top">03 / ROUND</div><p class="origin">COLOMBIA · HUILA</p><h3>哥倫比亞・慧蘭</h3><p class="flavour">黃桃、焦糖、可可尾韻</p>
-            <div class="card-footer"><span class="price">NT$ 460 / 200g</span><button class="save-coffee" type="button" data-coffee="哥倫比亞・慧蘭">加入收藏 ＋</button></div>
+          <article class="product-card" data-category="celebrate">
+            <div class="product-image-wrap"><img class="product-image" src="https://images.unsplash.com/photo-1487530811176-3780de880c2d?auto=format&fit=crop&w=700&q=82" alt="粉紫繡球與洋桔梗組成的祝福花禮" loading="lazy" width="700" height="756"><span class="product-tag">當季特選</span><button class="like-button" type="button" aria-label="收藏溫柔歲月花禮" aria-pressed="false">♡</button></div>
+            <div class="product-info"><p class="product-category">CELEBRATE · 03</p><h3>「溫柔歲月」粉紫繡球洋桔梗花禮</h3><p class="product-description">圓滿美滿與永恆祝福。團簇綻放的粉色繡球，象徵豐盛感恩。</p><div class="product-price"><strong>NT$ 2,180</strong><del>NT$ 2,580</del></div><button class="add-button" type="button" data-name="「溫柔歲月」粉紫繡球洋桔梗花禮" data-price="2180">＋ 加入購物車</button></div>
+          </article>
+          <article class="product-card" data-category="romance">
+            <div class="product-image-wrap"><img class="product-image" src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=700&q=82" alt="蜜桃粉漸層玫瑰花束" loading="lazy" width="700" height="756"><span class="product-tag">告白首選</span><button class="like-button" type="button" aria-label="收藏法式蜜桃花束" aria-pressed="false">♡</button></div>
+            <div class="product-info"><p class="product-category">ROMANCE · 04</p><h3>「法式蜜桃」經典漸層蜜桃玫瑰束</h3><p class="product-description">沉醉於你的溫柔。甜美柔和的蜜桃粉漸層，溫暖又令人心醉。</p><div class="product-price"><strong>NT$ 1,680</strong><del>NT$ 1,980</del></div><button class="add-button" type="button" data-name="「法式蜜桃」經典漸層蜜桃玫瑰束" data-price="1680">＋ 加入購物車</button></div>
+          </article>
+          <article class="product-card" data-category="daily">
+            <div class="product-image-wrap"><img class="product-image" src="https://images.unsplash.com/photo-1494972308805-463bc619d34e?auto=format&fit=crop&w=700&q=82" alt="白色小雛菊與玻璃花器的清新瓶花" loading="lazy" width="700" height="756"><span class="product-tag">自然清新</span><button class="like-button" type="button" aria-label="收藏春日漫步瓶花" aria-pressed="false">♡</button></div>
+            <div class="product-info"><p class="product-category">DAILY · 05</p><h3>「春日漫步」粉白小雛菊瓶花組</h3><p class="product-description">純真快樂與微小幸福。附贈設計感玻璃花器，為日常添一點綠意。</p><div class="product-price"><strong>NT$ 980</strong><del>NT$ 1,280</del></div><button class="add-button" type="button" data-name="「春日漫步」粉白小雛菊瓶花組" data-price="980">＋ 加入購物車</button></div>
+          </article>
+          <article class="product-card" data-category="celebrate">
+            <div class="product-image-wrap"><img class="product-image" src="https://images.unsplash.com/photo-1526045478516-99145907023c?auto=format&fit=crop&w=700&q=82" alt="盛放粉色鮮花的手提花籃" loading="lazy" width="700" height="756"><span class="product-tag">華麗盛宴</span><button class="like-button" type="button" aria-label="收藏花團錦簇花籃" aria-pressed="false">♡</button></div>
+            <div class="product-info"><p class="product-category">CELEBRATE · 06</p><h3>「花團錦簇」手提藤編粉嫩花籃</h3><p class="product-description">步步高升、前程似錦。開幕送禮、喬遷新居最體面的質感花藝。</p><div class="product-price"><strong>NT$ 2,680</strong><del>NT$ 3,200</del></div><button class="add-button" type="button" data-name="「花團錦簇」手提藤編粉嫩花籃" data-price="2680">＋ 加入購物車</button></div>
+          </article>
+          <article class="product-card" data-category="romance">
+            <div class="product-image-wrap"><img class="product-image" src="https://images.unsplash.com/photo-1494972308805-463bc619d34e?auto=format&fit=crop&w=700&q=82" alt="多朵粉色玫瑰組成的盛大花束" loading="lazy" width="700" height="756"><span class="product-tag">求婚熱搜</span><button class="like-button" type="button" aria-label="收藏愛意深邃花束" aria-pressed="false">♡</button></div>
+            <div class="product-info"><p class="product-category">ROMANCE · 07</p><h3>「愛意深邃」經典 99 朵粉玫瑰巨型花束</h3><p class="product-description">天長地久的承諾。求婚、週年紀念必備的極致浪漫感動。</p><div class="product-price"><strong>NT$ 5,680</strong><del>NT$ 6,800</del></div><button class="add-button" type="button" data-name="「愛意深邃」經典 99 朵粉玫瑰巨型花束" data-price="5680">＋ 加入購物車</button></div>
+          </article>
+          <article class="product-card" data-category="preserved">
+            <div class="product-image-wrap"><img class="product-image" src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=700&q=82" alt="精緻粉色永生花與綠葉花藝擺飾" loading="lazy" width="700" height="756"><span class="product-tag">保存 3 年+</span><button class="like-button" type="button" aria-label="收藏永恆絮語永生花" aria-pressed="false">♡</button></div>
+            <div class="product-info"><p class="product-category">PRESERVED · 08</p><h3>「永恆絮語」進口永生粉櫻絲絨圓盒</h3><p class="product-description">凝結最美的時光。日本大地農園頂級不凋花，無需澆水長久綻放。</p><div class="product-price"><strong>NT$ 2,480</strong><del>NT$ 2,980</del></div><button class="add-button" type="button" data-name="「永恆絮語」進口永生粉櫻絲絨圓盒" data-price="2480">＋ 加入購物車</button></div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="brew" id="brew" aria-labelledby="brewTitle">
-      <div class="wrap brew-grid">
-        <div class="brew-art reveal" aria-hidden="true"><div class="water-rings"></div><div class="dripper"></div><div class="carafe"></div><div class="brew-caption"><span>V60 / 15G : 240ML</span><strong>2'45''</strong></div></div>
-        <div class="brew-copy reveal">
-          <p class="eyebrow">A QUIET RITUAL</p>
-          <h2 class="section-title" id="brewTitle">把時間交給水，讓咖啡說<span class="text-blue">自己的話</span>。</h2>
-          <p>不需要繁複儀式，只要三個安靜的步驟。每一個參數，都是為了讓你更靠近豆子原本的樣子。</p>
-          <div class="brew-steps">
-            <div class="brew-step"><span class="step-number">01</span><div><h3>研磨，先聞見期待</h3><p>15g 中細研磨，讓香氣從指尖開始展開。</p></div></div>
-            <div class="brew-step"><span class="step-number">02</span><div><h3>悶蒸，等待第一個呼吸</h3><p>以 92°C 熱水浸潤 30 秒，喚醒甜感與層次。</p></div></div>
-            <div class="brew-step"><span class="step-number">03</span><div><h3>注水，保持自己的節奏</h3><p>穩定畫圈，讓 240ml 的清澈在 2 分 45 秒完成。</p></div></div>
-          </div>
+    <section class="section why-section" id="why-us" aria-labelledby="whyTitle">
+      <div class="wrap">
+        <div class="center-heading reveal"><p class="eyebrow">WHY TAKE TIME</p><h2 class="section-title" id="whyTitle">每一束花，都值得被好好對待。</h2><p>從花田到你手中，我們把每一個細節都當成心意的一部分。</p></div>
+        <div class="feature-grid">
+          <article class="feature"><span class="feature-icon" aria-hidden="true">✿</span><h3>嚴選頂級 A 級花材</h3><p>荷蘭、厄瓜多進口與在地小農直採，每日晨間鮮摘。</p></article>
+          <article class="feature"><span class="feature-icon" aria-hidden="true">✂</span><h3>花藝師原創設計</h3><p>自然流派粉彩色系，擺脫俗套，以極簡包裝留下花材本色。</p></article>
+          <article class="feature"><span class="feature-icon" aria-hidden="true">💧</span><h3>多重水袋保鮮</h3><p>特製保水營養凝膠，從花店到收花人手中持續補水。</p></article>
+          <article class="feature"><span class="feature-icon" aria-hidden="true">✉</span><h3>免費燙金手感賀卡</h3><p>專人代印或空白厚磅卡片，讓祝福優雅抵達。</p></article>
         </div>
       </div>
     </section>
 
-    <section class="visit" id="visit" aria-labelledby="visitTitle">
-      <div class="wrap reveal">
-        <p class="eyebrow">THE BLUE SKY LETTER</p>
-        <h2 id="visitTitle">把下一杯好咖啡，寄到你的日常裡。</h2>
-        <p>每月一封風味通信，分享新豆、沖煮靈感與只給會員的小小驚喜。</p>
-        <form class="subscribe-form" id="subscribeForm">
-          <input type="email" aria-label="電子郵件地址" placeholder="your@email.com" required>
-          <button type="submit">訂閱風味通信</button>
-        </form>
+    <section class="custom-section" id="custom" aria-labelledby="customTitle">
+      <div class="wrap custom-grid">
+        <div class="custom-copy reveal"><p class="eyebrow">MADE JUST FOR YOU</p><h2 id="customTitle">有特別的場合？<br>讓我們為您量身訂製專屬花束。</h2><p>告訴我們你的故事與預算，花藝師將為重要時刻設計一束獨一無二的花。</p><div class="occasion-list"><span>求婚</span><span>婚禮佈置</span><span>生日驚喜</span><span>開幕誌慶</span><span>企業客製</span></div><button class="button button-primary" type="button" data-open-consult>開始客製諮詢 <span aria-hidden="true">→</span></button></div>
+        <aside class="process-box reveal" aria-label="客製花禮流程"><h3>YOUR FLOWER, YOUR STORY</h3><div class="process-step"><b>1</b><span><strong>線上溝通</strong><small>分享場合、色系與預算</small></span></div><div class="process-step"><b>2</b><span><strong>花藝設計提案</strong><small>為你挑選當季鮮花與風格</small></span></div><div class="process-step"><b>3</b><span><strong>精緻包裝送達</strong><small>確認細節後，安心交付心意</small></span></div><p class="urgent-note">✦ 雙北急件最快 3 小時內配送</p></aside>
       </div>
+    </section>
+
+    <section class="section guide-section" id="guide" aria-labelledby="guideTitle">
+      <div class="wrap guide-grid">
+        <div class="guide-image-wrap reveal"><img class="guide-image" src="https://images.unsplash.com/photo-1487530811176-3780de880c2d?auto=format&fit=crop&w=900&q=85" alt="花藝師細心整理花材與葉片" loading="lazy" width="900" height="920"><div class="guide-caption">讓花在日常裡，多陪伴你幾天。</div></div>
+        <div class="guide-copy reveal"><p class="eyebrow">CARE & SECRETS</p><h2 class="section-title" id="guideTitle">把花照顧好，<br>讓美好慢一點結束。</h2><p>一點點日常照料，就能讓鮮花保持清新姿態，陪你更久。</p><div class="guide-steps"><article class="guide-step"><span>01</span><div><h3>斜角 45 度剪切花莖</h3><p>每隔一至兩天修剪一次，增加吸水截面積，保持導管通暢。</p></div></article><article class="guide-step"><span>02</span><div><h3>每日更換清水並清潔花器</h3><p>以乾淨常溫水補滿花器，減少細菌滋生與異味。</p></div></article><article class="guide-step"><span>03</span><div><h3>避開陽光直射與冷氣出風口</h3><p>放在陰涼通風處，延長花期 3–7 天。</p></div></article></div></div>
+      </div>
+    </section>
+
+    <section class="section reviews-section" id="reviews" aria-labelledby="reviewsTitle">
+      <div class="wrap"><div class="center-heading reveal"><p class="eyebrow">KIND WORDS</p><h2 class="section-title" id="reviewsTitle">花替我們，把心意送到了。</h2></div>
+        <div class="review-grid">
+          <article class="review reveal"><div class="stars" aria-label="5 星評價">★★★★★</div><blockquote>「收到的時候花還帶著水珠，粉玫瑰漂亮得像剛從花園摘下來。卡片字也寫得好溫柔，另一半很喜歡。」</blockquote><div class="review-person"><strong>林小姐・台北大安</strong><span>「初見心動」粉紅玫瑰束</span></div></article>
+          <article class="review reveal"><div class="stars" aria-label="5 星評價">★★★★★</div><blockquote>「想找一束不俗氣的開幕花，店員依照店面色調幫忙搭配，從挑花到送達都很細心，質感超出期待。」</blockquote><div class="review-person"><strong>陳先生・新北板橋</strong><span>「花團錦簇」粉嫩花籃</span></div></article>
+          <article class="review reveal"><div class="stars" aria-label="5 星評價">★★★★★</div><blockquote>「鬱金香放在辦公桌上，每天看到都覺得心情很好。包裝簡單又漂亮，配送時間也很準時，會再回購。」</blockquote><div class="review-person"><strong>王小姐・台北中山</strong><span>「微風晨光」鬱金香束</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter" aria-labelledby="newsletterTitle">
+      <div class="wrap newsletter-inner"><div><p class="eyebrow">A LITTLE FLOWER LETTER</p><h2 id="newsletterTitle">每週一點花藝靈感，<br>再送你 NT$ 100 折價券。</h2><p>訂閱花點時間生活誌，讓花的美好走進日常。</p></div><form class="newsletter-form" id="newsletterForm"><input type="email" name="email" placeholder="輸入你的 Email" aria-label="電子郵件地址" autocomplete="email" required><button type="submit">立即領取優惠</button></form></div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer" id="contact" aria-labelledby="contactTitle">
     <div class="wrap footer-grid">
-      <div class="footer-brand"><a class="brand" href="#top" aria-label="回到藍天咖啡首頁"><span class="brand-mark" aria-hidden="true">B</span><span class="brand-copy"><strong>藍天咖啡</strong><small>BLUE SKY COFFEE</small></span></a><p>為喜愛手沖咖啡的你，留下 一段慢慢品味、微微放晴的時間。</p></div>
-      <div><p class="footer-title">網站主題</p><div class="footer-links"><a href="#story">我們的故事</a><a href="#coffee">本季選豆</a><a href="#brew">沖煮日常</a></div></div>
-      <div><p class="footer-title">聯絡我們</p><div class="footer-links"><a href="mailto:hello@bluesky.coffee">hello@bluesky.coffee</a><address>台中市西屯區僑光路 100 號</address><span>每日 10:00 — 19:00</span></div></div>
+      <div class="footer-brand"><a class="brand" href="#top" aria-label="花點時間首頁"><span class="brand-mark" aria-hidden="true">✿</span><span class="brand-copy"><strong id="contactTitle">花點時間</strong><small>TAKE TIME FOR FLOWERS</small></span></a><p>在忙碌的世界裡，為自己與所愛花點時間。每一天，都值得有一束花相伴。</p><div class="footer-links" style="margin-top:12px"><span>營業時間：週一至週日 09:30–20:30</span></div></div>
+      <div><p class="footer-title">花束分類</p><div class="footer-links"><a href="#bouquets" data-filter-link="romance">浪漫告白</a><a href="#bouquets" data-filter-link="daily">日常瓶插</a><a href="#bouquets" data-filter-link="celebrate">慶生開幕</a><a href="#bouquets" data-filter-link="preserved">永生花盒</a><a href="#custom">VIP 客製化</a></div></div>
+      <div><p class="footer-title">服務與說明</p><div class="footer-links"><a href="#why-us">理念保證</a><a href="#guide">鮮花養護指引</a><a href="#bouquets">配送與運費</a><a href="#contact">常見問題 FAQ</a><a href="#contact">隱私條款</a></div></div>
+      <div><p class="footer-title">門市與聯絡</p><div class="footer-links"><address>📍 台北市大安區青田街 18 號 1 樓</address><a href="tel:+886223456789">📞 (02) 2345-6789</a><a href="https://line.me/R/ti/p/@timeforflower" target="_blank" rel="noreferrer">💬 官方 LINE：@timeforflower</a><a href="mailto:hello@timeforflower.tw">✉️ hello@timeforflower.tw</a></div></div>
     </div>
-    <div class="wrap footer-bottom"><span>© 2025 BLUE SKY COFFEE. ALL RIGHTS RESERVED.</span><span>BREW SLOW · LIVE BRIGHT</span></div>
+    <div class="wrap footer-bottom"><span>© 2026 花點時間 Take Time for Flowers. All Rights Reserved.</span><a href="#top">BACK TO TOP ↑</a></div>
   </footer>
-  <div class="toast" role="status" aria-live="polite"></div>
+
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="購物車清單" aria-hidden="true" tabindex="-1">
+    <div class="cart-header"><h2>你的花束清單</h2><button class="cart-close" id="cartClose" type="button" aria-label="關閉購物車">×</button></div>
+    <div class="cart-items" id="cartItems" aria-live="polite"></div>
+    <div class="cart-footer"><div class="cart-total"><span>合計</span><strong id="cartTotal">NT$ 0</strong></div><button class="checkout-button" id="checkoutButton" type="button">前往結帳</button></div>
+  </aside>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <dialog class="consult-dialog" id="consultDialog" aria-labelledby="consultTitle"><form class="dialog-content" id="consultForm"><h2 id="consultTitle">聊聊你的花禮想法</h2><p>留下聯絡方式與場合，我們的花藝師會盡快與你聯繫。</p><label>怎麼稱呼你？<input name="name" autocomplete="name" required></label><label>聯絡電話或 Email<input name="contact" required></label><label>想為什麼場合準備？<textarea name="occasion" placeholder="例如：週年紀念、生日驚喜……" required></textarea></label><div class="dialog-actions"><button class="dialog-cancel" type="button" id="consultCancel">先想一想</button><button class="button button-primary" type="submit">送出諮詢</button></div></form></dialog>
 
   <script>
     (() => {
-      const menuButton = document.querySelector('.menu-toggle');
-      const navLinks = document.querySelector('.nav-links');
-      const toast = document.querySelector('.toast');
+      const cart = [];
+      const menuButton = document.querySelector('#mobileToggle');
+      const navMenu = document.querySelector('#navMenu');
+      const cartDrawer = document.querySelector('#cartDrawer');
+      const cartBackdrop = document.querySelector('#cartBackdrop');
+      const cartItems = document.querySelector('#cartItems');
+      const cartCount = document.querySelector('#cartCount');
+      const cartTotal = document.querySelector('#cartTotal');
+      const toast = document.querySelector('#toast');
+      const consultDialog = document.querySelector('#consultDialog');
       let toastTimer;
-
-      const closeMenu = () => {
-        navLinks.classList.remove('open');
-        menuButton.setAttribute('aria-expanded', 'false');
-        menuButton.setAttribute('aria-label', '開啟導覽選單');
-        menuButton.textContent = '☰';
-      };
-      menuButton.addEventListener('click', () => {
-        const opening = !navLinks.classList.contains('open');
-        navLinks.classList.toggle('open', opening);
-        menuButton.setAttribute('aria-expanded', String(opening));
-        menuButton.setAttribute('aria-label', opening ? '關閉導覽選單' : '開啟導覽選單');
-        menuButton.textContent = opening ? '×' : '☰';
-      });
-      navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
 
       const showToast = message => {
         clearTimeout(toastTimer);
         toast.textContent = message;
         toast.classList.add('show');
-        toastTimer = setTimeout(() => toast.classList.remove('show'), 2600);
+        toastTimer = setTimeout(() => toast.classList.remove('show'), 2800);
       };
-      document.querySelectorAll('[data-coffee]').forEach(button => {
-        button.addEventListener('click', () => showToast(`已將「${button.dataset.coffee}」加入你的收藏。`));
+
+      const closeMenu = () => {
+        navMenu.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.setAttribute('aria-label', '開啟導覽選單');
+        menuButton.textContent = '☰';
+      };
+      menuButton.addEventListener('click', () => {
+        const opening = !navMenu.classList.contains('open');
+        navMenu.classList.toggle('open', opening);
+        menuButton.setAttribute('aria-expanded', String(opening));
+        menuButton.setAttribute('aria-label', opening ? '關閉導覽選單' : '開啟導覽選單');
+        menuButton.textContent = opening ? '×' : '☰';
       });
-      document.querySelector('#subscribeForm').addEventListener('submit', event => {
+      navMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+
+      const openCart = () => {
+        cartDrawer.classList.add('active');
+        cartBackdrop.classList.add('active');
+        cartDrawer.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('cart-open');
+        document.querySelector('#cartClose').focus();
+      };
+      const closeCart = () => {
+        cartDrawer.classList.remove('active');
+        cartBackdrop.classList.remove('active');
+        cartDrawer.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('cart-open');
+        document.querySelector('#cartOpen').focus();
+      };
+      document.querySelector('#cartOpen').addEventListener('click', openCart);
+      document.querySelector('#cartClose').addEventListener('click', closeCart);
+      cartBackdrop.addEventListener('click', closeCart);
+
+      const updateCartUI = () => {
+        const quantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+        const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+        cartCount.textContent = quantity;
+        document.querySelector('#cartOpen').setAttribute('aria-label', `開啟購物車，${quantity} 件商品`);
+        cartTotal.textContent = `NT$ ${total.toLocaleString('zh-TW')}`;
+        cartItems.replaceChildren();
+        if (!cart.length) {
+          const empty = document.createElement('p');
+          empty.className = 'cart-empty';
+          empty.innerHTML = '<span aria-hidden="true">🌷</span>購物車還沒有花束，挑一束喜歡的花吧。';
+          cartItems.append(empty);
+          return;
+        }
+        cart.forEach((item, index) => {
+          const row = document.createElement('article');
+          row.className = 'cart-item';
+          const image = document.createElement('img');
+          image.src = item.img;
+          image.alt = item.name;
+          const details = document.createElement('div');
+          const name = document.createElement('h3');
+          name.textContent = item.name;
+          const price = document.createElement('p');
+          price.textContent = `NT$ ${(item.price * item.quantity).toLocaleString('zh-TW')}`;
+          const count = document.createElement('small');
+          count.textContent = `數量：${item.quantity}`;
+          details.append(name, price, count);
+          const remove = document.createElement('button');
+          remove.className = 'remove-item';
+          remove.type = 'button';
+          remove.textContent = '移除';
+          remove.setAttribute('aria-label', `移除${item.name}`);
+          remove.addEventListener('click', () => removeFromCart(index));
+          row.append(image, details, remove);
+          cartItems.append(row);
+        });
+      };
+      const addToCart = (name, price, img) => {
+        const existing = cart.find(item => item.name === name);
+        if (existing) existing.quantity += 1;
+        else cart.push({ name, price: Number(price), img, quantity: 1 });
+        updateCartUI();
+        showToast(`已將「${name}」加入購物車。`);
+      };
+      const removeFromCart = index => {
+        const [removed] = cart.splice(index, 1);
+        updateCartUI();
+        if (removed) showToast(`已移除「${removed.name}」。`);
+      };
+      document.querySelectorAll('.add-button').forEach(button => {
+        button.addEventListener('click', () => {
+          const image = button.closest('.product-card').querySelector('.product-image').src;
+          addToCart(button.dataset.name, button.dataset.price, image);
+        });
+      });
+      document.querySelector('#checkoutButton').addEventListener('click', () => {
+        if (!cart.length) {
+          showToast('購物車目前是空的，先挑一束喜歡的花吧。');
+          return;
+        }
+        cart.length = 0;
+        updateCartUI();
+        closeCart();
+        showToast('謝謝你的訂購！花藝師將為你準備這份心意。');
+      });
+
+      document.querySelectorAll('.tab-btn').forEach(button => {
+        button.addEventListener('click', () => {
+          const filter = button.dataset.filter;
+          document.querySelectorAll('.tab-btn').forEach(tab => {
+            const active = tab === button;
+            tab.classList.toggle('active', active);
+            tab.setAttribute('aria-pressed', String(active));
+          });
+          document.querySelectorAll('.product-card').forEach(card => {
+            card.hidden = filter !== 'all' && card.dataset.category !== filter;
+          });
+        });
+      });
+      document.querySelectorAll('.like-button').forEach(button => {
+        button.addEventListener('click', () => {
+          const liked = button.classList.toggle('liked');
+          button.textContent = liked ? '♥' : '♡';
+          button.setAttribute('aria-pressed', String(liked));
+          showToast(liked ? '已將花束加入個人心願收藏！💖' : '已從心願收藏移除。');
+        });
+      });
+      document.querySelectorAll('[data-filter-link]').forEach(link => {
+        link.addEventListener('click', () => {
+          const target = document.querySelector(`.tab-btn[data-filter="${link.dataset.filterLink}"]`);
+          target?.click();
+        });
+      });
+      document.querySelector('#newsletterForm').addEventListener('submit', event => {
         event.preventDefault();
         event.currentTarget.reset();
-        showToast('謝謝訂閱，下一封晴朗的風味通信即將寄出。');
+        showToast('領取成功！NT$ 100 折價券已為你準備好了。');
+      });
+      document.querySelectorAll('[data-open-consult]').forEach(button => button.addEventListener('click', () => consultDialog.showModal()));
+      document.querySelector('#consultCancel').addEventListener('click', () => consultDialog.close());
+      document.querySelector('#consultForm').addEventListener('submit', event => {
+        event.preventDefault();
+        consultDialog.close();
+        event.currentTarget.reset();
+        showToast('已收到你的客製需求，花藝師將盡快與你聯繫。');
+      });
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && cartDrawer.classList.contains('active')) closeCart();
       });
 
       const revealItems = document.querySelectorAll('.reveal');
-      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (!('IntersectionObserver' in window) || reducedMotion) {
-        revealItems.forEach(item => item.classList.add('visible'));
-      } else {
+      if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         const observer = new IntersectionObserver(entries => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -446,7 +647,8 @@
           });
         }, { threshold: .12 });
         revealItems.forEach(item => observer.observe(item));
-      }
+      } else revealItems.forEach(item => item.classList.add('visible'));
+      updateCartUI();
     })();
   </script>
 </body>
